@@ -1,0 +1,138 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: background-color 0.4s ease;
+}
+
+/* Toggle Button */
+#colorToggle {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  color: white;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  z-index: 999;
+}
+
+#colorToggle:hover {
+  background-color: black;
+  transform: scale(1.05);
+}
+
+.content {
+  padding: 20px;
+}
+
+
+header {
+    position: relative;
+    text-align: center;
+    background-color: #7a1e1e;
+    color: white;
+    width: 100vw;
+    padding: 5px;
+}
+
+
+.hotel-logo {
+    width: 400px;
+    height: auto;
+    padding: 0;
+}
+
+.logo-caption {
+    color: #ae891c;
+}
+
+/* Navigation */
+nav {
+    position: relative;
+    
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 15px;
+    display: inline-block;
+}
+
+.nav-links a.active {
+    border-bottom: 3px solid #f1c40f; /* Bright gold underline */
+    font-weight: bold;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+@media screen and (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        color: white;
+        background-color: #2c3e50;
+        z-index: 1000;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        display: block;
+        text-align: center;
+        padding: 15px;
+    }
+
+    .login-icon {
+    position: absolute;
+    top: 20px;
+    right: 60px; /* Adjust based on hamburger position */
+}
+
+.login-icon a {
+    color: white;
+    font-size: 24px;
+    text-decoration: underline;
+    display: inline;
+}
+
+.login-icon a:hover {
+    color: #f1c40f;
+}
+
+}

@@ -1,0 +1,151 @@
+.login-container {
+  padding: 2rem;
+  margin: 3rem auto;
+  max-width: 1000px;
+  display: flex;
+  flex-direction: column;
+}
+
+.login-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.login-col {
+  flex: 1;
+  min-width: 300px;
+}
+
+.image-col {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  margin-left: 0px;
+  padding-right: 50px;
+}
+
+.form-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.social-signin {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.icon-btn {
+  background: #eee;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 4px;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  margin: 1.5rem 0;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #eee;
+}
+
+.divider span {
+  padding: 0 1rem;
+  font-weight: bold;
+  color: #555;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.form-group input {
+  padding: 0.75rem;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.password-group {
+  position: relative;
+}
+
+.toggle-password-icon {
+  position: absolute;
+  top: 60%;
+  right: 1rem;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #6c757d;
+}
+
+.form-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.login-btn {
+  background-color: #0d6efd;
+  color: white;
+  border: none;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.register-link {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.link-danger {
+  color: red;
+  text-decoration: none;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .login-row {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 450px) {
+  .form-group input {
+    padding-right: 3rem;
+  }
+
+  .toggle-password-icon {
+    right: 0.75rem;
+  }
+
+  .login-container {
+    padding: 1rem;
+  }
+}

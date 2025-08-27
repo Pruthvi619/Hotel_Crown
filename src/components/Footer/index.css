@@ -1,0 +1,71 @@
+
+/* Footer */
+footer {
+    background-color: #7b2727;
+    color: white;
+    text-align: center;
+    padding: 5px;
+    width: 100vw;
+}
+footer p {
+    color: white;
+}
+
+footer nav ul {
+    padding: 0;
+}
+
+footer nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+footer nav ul a {
+    text-decoration: none;
+    color: white;
+    padding: 5px 10px;
+    display: inline-block;
+}
+
+footer .social-icons a {
+    margin: 0 10px;
+    font-size: 20px;
+    color: white;
+    padding-right: 15px;
+    display: inline-flex;
+}
+.footer-hotel-logo {
+    height: 12%;
+    width: 12%;
+}
+
+.social-icons {
+  list-style: none;
+  display: flex;
+  justify-content: center;    /* center horizontally */
+  margin-top: 20px;
+  padding: 0;
+  margin: 0;
+  display: flex;              /* horizontal layout */
+  gap: 15px;                  /* space between icons */
+}
+
+.social-icons li a {
+  color: #555;                /* default icon color */
+  font-size: 20px;            /* icon size */
+  transition: color 0.3s ease;
+  display: inline-block;
+}
+
+.social-icons li a:hover {
+  color: #007bff;             /* change color on hover */
+}
+
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    .btn {
+        width: 20%;
+    }
+}
+

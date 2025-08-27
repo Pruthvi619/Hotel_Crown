@@ -1,0 +1,123 @@
+/* Reset & base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+main {
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+h2 {
+  color: #7a1e1e;
+  font-size: 2.5rem;
+  margin-bottom: 12px;
+}
+
+main p {
+  font-size: 1.15rem;
+  color: #555;
+  margin-bottom: 40px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Facility Grid Container */
+.facility-grid {
+  display: grid;
+  gap: 30px;
+  /* Responsive columns: min 280px, auto-fit as many */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+/* Each Card */
+.facility-card {
+  background-color: transparent;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  cursor: default;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.facility-card:hover {
+  transform: translateY(-8px);
+}
+
+/* Images */
+.facility-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Facility Info Section */
+.facility-info {
+  padding: 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.facility-info h3 {
+  font-size: 1.3rem;
+  color: #7a1e1e;
+  margin-bottom: 10px;
+}
+
+.facility-info p {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.4;
+}
+
+/* FOOTER - minimal example (update if you have Footer CSS elsewhere) */
+footer {
+  background-color: #7a1e1e;
+  color: white;
+  padding: 20px 15px;
+  text-align: center;
+  font-size: 0.9rem;
+  margin-top: 60px;
+}
+
+/* Responsive Typography & Layout */
+@media (max-width: 768px) {
+  h2 {
+    font-size: 2rem;
+  }
+  main p {
+    font-size: 1rem;
+    max-width: 90%;
+  }
+  
+  .facility-card img {
+    height: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  h2 {
+    font-size: 1.75rem;
+  }
+  main p {
+    font-size: 0.95rem;
+  }
+
+  .facility-card img {
+    height: 130px;
+  }
+}

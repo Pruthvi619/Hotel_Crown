@@ -1,0 +1,22 @@
+/* src/index.css or src/App.css (or whichever is your main global CSS) */
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  background-color: #fff;
+  color: #333;
+}
+
+/* Inherit box-sizing for all elements */
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+/* Any other very general styles for body */
+body {
+  font-family: Arial, sans-serif;
+  transition: background-color 0.4s ease; /* Your existing transition */
+  /* Remove any background-color set here if you want body to be transparent for full-width components */
+}

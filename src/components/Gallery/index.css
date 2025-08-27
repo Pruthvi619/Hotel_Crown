@@ -1,0 +1,349 @@
+/* Body/HTML base styling for the overall background and centering */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #eaeef3; /* Light grey background to match screenshot */
+    display: flex; /* For centering the main container */
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Full viewport height */
+    font-family: 'Inter', sans-serif; /* Use a modern font like Inter (Google Fonts) */
+    overflow-x: hidden; /* Prevent horizontal scrollbar from appearing */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+/* Base styles for all elements to inherit box-sizing */
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+/* General container for the entire visual diary section */
+.visual-diary-container {
+  background-image: url(https://www.adobe.com/uk/express/learn/blog/media_13f8626e32f453ec22fc25afbbc0c6b40a1070781.jpeg?width=2000&format=webply&optimize=medium);
+  background-repeat: no-repeat;
+  background-size: cover; /* Or contain, or a specific size */
+  background-position: center center;
+  background-attachment: scroll; /* Default, image scrolls with content */
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Soft shadow around the white box */
+  padding: 40px;
+  max-width: 1200px; /* Max width for large screens */
+  width: 95%; /* Responsive width, taking up most of the screen */
+  margin: auto; /* Center the container horizontally */
+  margin-top: 10px;
+  text-align: center;
+  position: relative; /* For positioning absolute elements inside */
+  overflow: hidden; /* Ensures content stays within rounded corners */
+}
+
+/* Header section for title and description */
+.visual-diary-header {
+  margin-bottom: 40px;
+  padding-top: 10px; /* Space from the top edge of the container */
+}
+
+.gallery-label {
+  font-size: 0.9em;
+  color: #888;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.visual-diary-title {
+  font-size: 2.5em;
+  color: #333;
+  margin-bottom: 15px;
+  font-weight: 700; /* Bold */
+  line-height: 1.2;
+}
+
+.visual-diary-description {
+  font-size: 1.1em;
+  color: #666;
+  line-height: 1.5;
+  max-width: 600px; /* Limit width for better readability */
+  margin: 0 auto;
+}
+
+/* Category Buttons */
+.category-buttons-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* Space between buttons */
+  margin-bottom: 40px;
+  flex-wrap: wrap; /* Allow buttons to wrap to the next line on smaller screens */
+  padding: 0 20px; /* Add some horizontal padding */
+}
+
+.category-button {
+  background-color: #f0f0f0;
+  color: #555;
+  border: none;
+  border-radius: 20px; /* Pill-shaped buttons */
+  padding: 10px 20px;
+  font-size: 0.95em;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  white-space: nowrap; /* Prevent text wrapping inside buttons */
+  flex-shrink: 0; /* Prevent buttons from shrinking */
+}
+
+.category-button:hover {
+  background-color: #e0e0e0;
+}
+
+.category-button.active {
+  background-color: #000; /* Black for active button */
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Subtle shadow for active button */
+}
+
+.category-button.view-more {
+  background-color: transparent;
+  color: #000;
+  border: 1px solid #ddd;
+  font-weight: 600;
+}
+
+.category-button.view-more:hover {
+  background-color: #f0f0f0;
+}
+
+/* Swiper Carousel Specific Styles */
+.visual-diary-carousel {
+  width: 100%;
+  /* Provide ample padding for the stacked effect to be visible and for arrows */
+  padding: 0 80px; /* Adjust based on arrow size and desired peek amount */
+  position: relative;
+  overflow: visible !important; /* VERY IMPORTANT: Allows effects and shadows to extend beyond carousel bounds */
+}
+
+/* Ensure the Swiper wrapper has perspective for 3D effects */
+.visual-diary-carousel .swiper-wrapper {
+    transform-style: preserve-3d;
+    padding: 20px 0; /* Add vertical padding for top/bottom shadows */
+}
+
+.carousel-slide {
+  width: 380px; /* Default width for the main slide */
+  height: 480px; /* Default height for the main slide */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  overflow: hidden; /* Keeps image within rounded corners */
+  background-color: #fff; /* Fallback background for slide */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* General shadow for all slides */
+  transition: box-shadow 0.3s ease, transform 0.3s ease, filter 0.3s ease; /* Smooth transitions */
+}
+
+.carousel-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures image covers the slide area without distortion */
+  border-radius: 15px; /* Apply border-radius to the image itself */
+}
+
+/* Swiper Navigation Arrows */
+.swiper-button-prev,
+.swiper-button-next {
+  color: #000; /* Black arrows */
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15); /* More prominent shadow for arrows */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20; /* Ensure arrows are above slides */
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+    background-color: #f8f8f8; /* Slightly lighter on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.swiper-button-prev {
+  left: 20px; /* Position relative to the .visual-diary-carousel container */
+}
+
+.swiper-button-next {
+  right: 20px; /* Position relative to the .visual-diary-carousel container */
+}
+
+/* Hide default Swiper arrow icons and replace with custom ones (or just style the containers) */
+/* Swiper uses ::after pseudo-elements for arrows by default */
+.swiper-button-prev::after {
+  content: '←'; /* Unicode arrow left */
+  font-size: 1.8em !important;
+  font-weight: bold;
+}
+
+.swiper-button-next::after {
+  content: '→'; /* Unicode arrow right */
+  font-size: 1.8em !important;
+  font-weight: bold;
+}
+
+/* Styling for the active slide and inactive slides to create the stacked look */
+.visual-diary-carousel .swiper-slide-active {
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25); /* More prominent shadow for the active slide */
+    transform: scale(1) translateZ(0) !important; /* Ensure active slide is at its normal size/position */
+    z-index: 10; /* Ensure active slide is on top */
+    filter: brightness(1); /* Full brightness for active slide */
+}
+
+/* Styling for non-active slides (the ones peeking) */
+.visual-diary-carousel .swiper-slide-prev,
+.visual-diary-carousel .swiper-slide-next {
+    filter: brightness(0.8); /* Slightly dim inactive slides */
+    /* Swiper's coverflow effect will handle the transform for stacking.
+       You can fine-tune its appearance here if needed, but be careful not to override Swiper's transforms. */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); /* Lighter shadow for inactive slides */
+}
+
+/* Specific styling for slides further away if needed (for more complex coverflow) */
+.visual-diary-carousel .swiper-slide-prev + .swiper-slide, /* The slide before prev */
+.visual-diary-carousel .swiper-slide-next ~ .swiper-slide /* Slides after next */ {
+    filter: brightness(0.7); /* Even dimmer for slides further out */
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05); /* Very subtle shadow */
+}
+
+
+/* --- Responsive Design --- */
+
+/* Medium devices (tablets, 768px and up) */
+@media (max-width: 1024px) {
+    .visual-diary-container {
+        padding: 30px;
+        max-width: 90%;
+    }
+    .visual-diary-title {
+        font-size: 2em;
+    }
+    .visual-diary-description {
+        font-size: 1em;
+    }
+    .carousel-slide {
+        width: 300px; /* Slightly smaller slides */
+        height: 400px;
+    }
+    .visual-diary-carousel {
+        padding: 0 60px; /* Adjust padding for arrows */
+    }
+    .swiper-button-prev,
+    .swiper-button-next {
+        width: 45px;
+        height: 45px;
+    }
+    .swiper-button-prev::after,
+    .swiper-button-next::after {
+        font-size: 1.6em !important;
+    }
+}
+
+/* Small devices (phones, 480px and up) */
+@media (max-width: 768px) {
+    .visual-diary-container {
+        padding: 20px;
+        border-radius: 15px;
+        margin: 20px auto; /* More margin on smaller screens */
+    }
+    .visual-diary-header {
+        margin-bottom: 25px;
+    }
+    .visual-diary-title {
+        font-size: 1.7em;
+        margin-bottom: 10px;
+    }
+    .gallery-label {
+        font-size: 0.8em;
+        margin-bottom: 5px;
+    }
+    .visual-diary-description {
+        font-size: 0.9em;
+    }
+    .category-buttons-wrapper {
+        gap: 8px;
+        margin-bottom: 25px;
+        padding: 0 10px;
+        justify-content: flex-start; /* Align buttons to start if they wrap */
+        overflow-x: auto; /* Allow horizontal scrolling if many buttons */
+        -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    }
+    .category-buttons-wrapper::-webkit-scrollbar {
+        display: none; /* Hide scrollbar */
+    }
+    .category-button {
+        padding: 8px 15px;
+        font-size: 0.85em;
+        border-radius: 15px;
+    }
+    .carousel-slide {
+        width: 250px; /* Smaller slides for phones */
+        height: 350px;
+        border-radius: 10px;
+    }
+    .carousel-image {
+        border-radius: 10px;
+    }
+    .visual-diary-carousel {
+        padding: 0 40px; /* Reduce padding for arrows */
+    }
+    .swiper-button-prev,
+    .swiper-button-next {
+        width: 35px;
+        height: 35px;
+        left: 5px; /* Closer to edges */
+        right: 5px;
+    }
+    .swiper-button-prev::after,
+    .swiper-button-next::after {
+        font-size: 1.3em !important;
+    }
+}
+
+/* Extra small devices (portrait phones, less than 480px) */
+@media (max-width: 480px) {
+    .visual-diary-container {
+        padding: 15px;
+        border-radius: 10px;
+        width: 98%; /* Take more width on very small screens */
+    }
+    .visual-diary-title {
+        font-size: 1.5em;
+    }
+    .visual-diary-description {
+        font-size: 0.8em;
+    }
+    .category-buttons-wrapper {
+        gap: 5px;
+        margin-bottom: 20px;
+        padding: 0 5px;
+    }
+    .category-button {
+        padding: 6px 12px;
+        font-size: 0.8em;
+    }
+    .carousel-slide {
+        width: 200px; /* Even smaller slides */
+        height: 300px;
+    }
+    .visual-diary-carousel {
+        padding: 0 20px; /* Minimal padding */
+    }
+    .swiper-button-prev,
+    .swiper-button-next {
+        /* Consider hiding arrows on very small screens if they are too cramped */
+        display: none;
+    }
+}
